@@ -1,3 +1,4 @@
+import './style.css';
 import CardGame from '../../components/CardGame/main.js';
 
 function BoardGame(amountCards) {
