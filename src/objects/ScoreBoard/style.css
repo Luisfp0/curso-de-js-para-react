@@ -2,7 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 25px 19px 25px 0;
+  padding: 25px 0 25px 0;
+  position: relative;
 }
 
 .score-board .player-1 {
@@ -24,29 +25,44 @@
   align-items: center;
 }
 
-.sandstorm {
+.vs {
   color: var(--color-sandstorm);
-  padding: 0 5px 0 5px;
+  padding: 0 5px;
 }
 
 .arrow-down {
-  position: relative;
-  top: -21px;
-  left: 121px;
+  position: absolute;
+  top: 8px;
+  left: 105px;
 }
 
-.arrow-down.-movement {
+.arrow-down.-left {
+  animation-duration: 2s;
+  animation-name: slideBack;
+}
+
+
+.arrow-down.-right {
   animation-duration: 2s;
   animation-name: slidein;
-  left: 200px;
+  left: 195px;
 }
 
 @keyframes slidein {
   from {
-  top: -21px;
-  left: 121px;
+    top: 8px;
+    left: 105px;
   }
   to {
-    left: 200px;
+    left: 195px;
+  }
+}
+
+@keyframes slideBack {
+  from {
+    left: 195px;
+  }
+  to {
+    left: 105px;
   }
 }
