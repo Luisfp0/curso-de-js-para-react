@@ -14,3 +14,4 @@ $root.insertAdjacentHTML(
     ${BoardGame(6)}
     `
 );
+//Alteração antes dos desafios
