@@ -1,6 +1,6 @@
 function arrowDown() {
-    return /*html*/ `
-      <img src="Images/IconArrowDown.png">
+  return /*html*/ `
+      <img src="Images/IconArrowDown.svg">
     `;
 }
 
