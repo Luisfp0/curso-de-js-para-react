@@ -1,18 +1,16 @@
 import './style.css';
 import CardGame from '../CardGame/main';
-import BoardGame from '../../objects/BoardGame';
 
 function CardFrontBack() {
-
-
+  var player = 1;
   window.cardFrontBack = {};
   window.cardFrontBack.handleClick = (event) => {
+    var $arrowMove = document.querySelector('.arrow-down');
     var $countActive = 0;
     var $cards = document.querySelectorAll('.card-front-back')
     const $origin = event.target;
     const $cardFrontBack = $origin.closest('.card-front-back');
     $cardFrontBack.classList.toggle('-active');
-
     for (let i = 0; i < $cards.length; i++) {
       if ($cards[i].classList.contains('-active')) {
         $countActive++;
@@ -20,6 +18,15 @@ function CardFrontBack() {
     }
     setTimeout(() => {
       if ($countActive === 2) {
+        if (player === 1) {
+          player = 2;
+          $arrowMove.classList.remove('-left')
+          $arrowMove.classList.add('-right')
+        } else {
+          player = 1
+          $arrowMove.classList.remove('-right')
+          $arrowMove.classList.add('-left')
+        }
         for (let i = 0; i < $cards.length; i++) {
           $cards[i].classList.remove('-active')
         }
