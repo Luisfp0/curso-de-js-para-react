@@ -4,6 +4,11 @@ import arrowDown from '../../components/Arrowdown';
 import './style.css';
 
 function ScoreBoard() {
+
+
+
+
+
   return /*html*/ `
     <header class='score-board'>
       <div>${arrowDown()}</div>
