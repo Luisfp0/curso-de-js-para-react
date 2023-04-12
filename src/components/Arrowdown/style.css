@@ -1,0 +1,36 @@
+.arrow-down {
+  position: absolute;
+  top: 8px;
+  left: 105px;
+}
+
+.arrow-down.-left {
+  animation-duration: 2s;
+  animation-name: slideBack;
+}
+
+
+.arrow-down.-right {
+  animation-duration: 2s;
+  animation-name: slidein;
+  left: 195px;
+}
+
+@keyframes slidein {
+  from {
+    top: 8px;
+    left: 105px;
+  }
+  to {
+    left: 195px;
+  }
+}
+
+@keyframes slideBack {
+  from {
+    left: 195px;
+  }
+  to {
+    left: 105px;
+  }
+}

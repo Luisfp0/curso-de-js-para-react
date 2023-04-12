@@ -1,6 +1,8 @@
+import './style.css';
+
 function arrowDown() {
   return /*html*/ `
-      <img src="Images/IconArrowDown.svg">
+      <img class='arrow-down' src="Images/IconArrowDown.svg">
     `;
 }
 
