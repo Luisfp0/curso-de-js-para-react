@@ -1,7 +1,11 @@
+import './style.css';
 
-function ArrowDown() {
+function ArrowDown(currentPlayer) {
   return /*html*/`
-  <img src='Images/IconArrowDown.svg' alt='Ícone de uma seta para baixo'>
+  <img class='arrow-down'
+       data-currentPlayer='${currentPlayer}'
+       src='Images/IconArrowDown.svg' 
+       alt='Ícone de uma seta para baixo'>
 `;
 }
 
