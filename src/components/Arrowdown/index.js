@@ -5,5 +5,4 @@ function arrowDown() {
       <img class='arrow-down' src="Images/IconArrowDown.svg">
     `;
 }
-
 export default arrowDown;
