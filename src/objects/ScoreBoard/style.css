@@ -28,4 +28,5 @@
 .vs {
   color: var(--color-sandstorm);
   padding: 0 5px;
+  font-size: 0.8rem;
 }
