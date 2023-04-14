@@ -2,11 +2,21 @@ import './style.css';
 import CardFrontBack from '../../components/CardFrontBack';
 import cards from './data.js'
 
-function BoardGame(amountCards) {
+function BoardGame() {
+  window.boardGame = {};
+  window.boardGame.handleClick = (event) => {
+    const $boardGame = document.querySelector('.board-game');
+    const $cardsActive = $boardGame.querySelectorAll('.card-front-back.-active');
+    if ($cardsActive.length === 2) {
+      setTimeout(() => {
+        $cardsActive.forEach((card) => card.classList.remove('-active'))
+      }, 1000);
+    };
+  }
   const htmlCardsList = cards.map((card) => CardFrontBack(card.icon, card.altIcon));
   const $htmlCards = htmlCardsList.join('');
   return /*html*/ `
-    <section class="board-game">
+    <section class="board-game" onClick='boardGame.handleClick(event)'>
         ${$htmlCards}
     </section>`;
 }
