@@ -1,6 +1,6 @@
 import './style.css';
 import CardFrontBack from '../../components/CardFrontBack';
-import cards from './data.js'
+import cards from './data.js';
 
 function BoardGame() {
   const flipAndHideCards = ($cardsActive) => {
