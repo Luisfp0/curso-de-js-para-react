@@ -1,6 +1,7 @@
 import './style.css';
 import CardFrontBack from '../../components/CardFrontBack';
 import cards from './data.js';
+import CardGame from '../../components/CardGame/main';
 
 function BoardGame() {
   const flipAndHideCards = ($cardsActive) => {
@@ -14,13 +15,20 @@ function BoardGame() {
 
   window.boardGame = {};
   window.boardGame.handleClick = (event) => {
+    const target = event.target;
+    const $cardFrontBack = target.closest('.card-front-back');
+    const imgCardBack = $cardFrontBack.querySelector('.card.-back .card-game .img-back');
+    console.log(imgCardBack)
+
+
     const $boardGame = document.querySelector('.board-game');
     const $arrowDown = document.querySelector('.arrow-down');
     const $cardsActive = $boardGame.querySelectorAll('.card-front-back.-active');
-
     if ($cardsActive.length === 2) {
+      if (imgCardBack) {
+        console.log('talvez')
+      }
       setTimeout(() => {
-
         flipAndHideCards($cardsActive);
         changePlayer($arrowDown);
       }, 1000);
