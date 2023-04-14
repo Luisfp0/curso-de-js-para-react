@@ -3,13 +3,26 @@ import CardFrontBack from '../../components/CardFrontBack';
 import cards from './data.js'
 
 function BoardGame() {
+  const flipAndHideCards = ($cardsActive) => {
+    $cardsActive.forEach((card) => card.classList.remove('-active'));
+  }
+
+  const changePlayer = ($arrowDown) => {
+    const currentPlayer = $arrowDown.getAttribute('data-currentplayer');
+    $arrowDown.setAttribute('data-currentplayer', currentPlayer == 1 ? 2 : 1);
+  }
+
   window.boardGame = {};
   window.boardGame.handleClick = (event) => {
     const $boardGame = document.querySelector('.board-game');
+    const $arrowDown = document.querySelector('.arrow-down');
     const $cardsActive = $boardGame.querySelectorAll('.card-front-back.-active');
+
     if ($cardsActive.length === 2) {
       setTimeout(() => {
-        $cardsActive.forEach((card) => card.classList.remove('-active'))
+
+        flipAndHideCards($cardsActive);
+        changePlayer($arrowDown);
       }, 1000);
     };
   }
