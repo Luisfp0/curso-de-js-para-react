@@ -33,9 +33,10 @@ function BoardGame() {
     const $boardGame = document.querySelector('.board-game');
     const $arrowDown = document.querySelector('.arrow-down');
     const $cardsActive = $boardGame.querySelectorAll('.card-front-back.-active');
-    if ($cardsActive.length >= 2) {
+    if ($cardsActive.length === 2) {
       if (click1.src === click2.src) {
-        console.log('Deu certo');
+        $cardsActive.forEach((card) => card.classList.remove('-active'));
+        $cardsActive.forEach((card) => card.classList.add('-pair'));
       } else {
         setTimeout(() => {
           flipAndHideCards($cardsActive);

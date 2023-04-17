@@ -13,6 +13,10 @@
   transform: rotateY(180deg);  
 }
 
+.card-front-back.-pair{
+  transform: rotateY(180deg);  
+}
+
 .card-front-back > .card {
   position: absolute;
   backface-visibility: hidden;
