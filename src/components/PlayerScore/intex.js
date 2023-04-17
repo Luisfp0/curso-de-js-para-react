@@ -1,8 +1,9 @@
 import './style.css';
 
-function PlayerScore(points = 0) {
+function PlayerScore(customClass, points = 0) {
+  const classe = 'player-score ' + customClass
   return /*html*/`
-  <ol class='player-score' data-points='${points}'>
+  <ol class='${classe}' data-points='${points}'>
     <li class='pointer'>um</li>
     <li class='pointer'>dois</li>
     <li class='pointer'>três</li>

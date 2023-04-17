@@ -7,8 +7,8 @@ function BoardGame() {
     $cardsActive.forEach((card) => card.classList.remove('-active'));
   }
 
-  const changePlayer = ($arrowDown) => {
-    const currentPlayer = $arrowDown.getAttribute('data-currentplayer');
+  const changePlayer = ($arrowDown, currentPlayer) => {
+    console.log('changePlayer', currentPlayer)
     $arrowDown.setAttribute('data-currentplayer', currentPlayer == 1 ? 2 : 1);
   }
   let clickScreen = 0;
@@ -17,30 +17,40 @@ function BoardGame() {
 
   window.boardGame = {};
   window.boardGame.handleClick = (event) => {
-    console.log(clickScreen)
+    const $arrowDown = document.querySelector('.arrow-down');
+    const currentPlayer = Number($arrowDown.getAttribute('data-currentplayer'));
+    let playerScoreOne = document.querySelector('.player-score.one');
+    let playerScoreTwo = document.querySelector('.player-score.two');
+    let dataPointsOne = Number(playerScoreOne.getAttribute('data-points'));
+    let dataPointsTwo = Number(playerScoreTwo.getAttribute('data-points'));
     const target = event.target;
     const $cardFrontBack = target.closest('.card-front-back');
+    if ($cardFrontBack === null) {
+      return;
+    }
     const imgCardBack = $cardFrontBack.querySelector('.card.-back .card-game .img-back');
     if (clickScreen === 0) {
       click1 = imgCardBack;
       clickScreen++;
-      console.log("Esse é o click 1", click1)
     } else {
       click2 = imgCardBack;
-      console.log("Esse é o click 2", click2)
       clickScreen = 0;
     }
     const $boardGame = document.querySelector('.board-game');
-    const $arrowDown = document.querySelector('.arrow-down');
     const $cardsActive = $boardGame.querySelectorAll('.card-front-back.-active');
     if ($cardsActive.length === 2) {
       if (click1.src === click2.src) {
         $cardsActive.forEach((card) => card.classList.remove('-active'));
         $cardsActive.forEach((card) => card.classList.add('-pair'));
+        if (currentPlayer === 1) {
+          playerScoreOne.setAttribute('data-points', ++dataPointsOne);
+        } else {
+          playerScoreTwo.setAttribute('data-points', ++dataPointsTwo);
+        }
       } else {
         setTimeout(() => {
           flipAndHideCards($cardsActive);
-          changePlayer($arrowDown);
+          changePlayer($arrowDown, currentPlayer);
         }, 1000)
       };
     };
