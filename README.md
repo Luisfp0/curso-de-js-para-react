@@ -20,4 +20,4 @@
   
 ## :notebook: Sobre o curso
   [O curso](https://youtube.com/playlist?list=PLirko8T4cEmzWZVn_ZKQbfDOuCnSZJ4va) visa usar o mínimo possível de HTML, criando os componentes utilizando Javascript e no final importando eles para o HTML. <br>
-  Todos os componentes e estrutura do projeto também pode ser encontrado no [Figma](https://www.figma.com/community/file/1230603217474657587).
+  Todos os componentes e estrutura do projeto também podem ser encontrados no [Figma](https://www.figma.com/community/file/1230603217474657587).
