@@ -24,7 +24,7 @@ function BoardGame() {
     let dataPointsOne = Number(playerScoreOne.getAttribute('data-points'));
     let dataPointsTwo = Number(playerScoreTwo.getAttribute('data-points'));
     let winnerScreen = document.querySelector('.winner');
-    console.log(winnerScreen)
+    let player = document.querySelector('.player')
     const target = event.target;
     const $cardFrontBack = target.closest('.card-front-back');
     if ($cardFrontBack === null) {
@@ -58,6 +58,7 @@ function BoardGame() {
     };
     if (dataPointsOne + dataPointsTwo === 3) {
       winnerScreen.style.display = 'block';
+      player.innerHTML = 'Player' + currentPlayer;
     }
   }
   const htmlCardsList = cards.map((card) => CardFrontBack(card.icon, card.altIcon));
