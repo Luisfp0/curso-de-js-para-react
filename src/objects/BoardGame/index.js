@@ -8,7 +8,6 @@ function BoardGame() {
   }
 
   const changePlayer = ($arrowDown, currentPlayer) => {
-    console.log('changePlayer', currentPlayer)
     $arrowDown.setAttribute('data-currentplayer', currentPlayer == 1 ? 2 : 1);
   }
   let clickScreen = 0;
@@ -57,7 +56,9 @@ function BoardGame() {
       };
     };
     if (dataPointsOne + dataPointsTwo === 3) {
-      winnerScreen.style.display = 'block';
+      setTimeout(() => {
+        winnerScreen.style.display = 'block';
+      }, 700)
       player.innerHTML = 'Player' + currentPlayer;
     }
   }
