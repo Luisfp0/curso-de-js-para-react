@@ -58,7 +58,7 @@ function BoardGame() {
   const htmlCardsList = cards.map((card) => CardFrontBack(card.icon, card.altIcon));
   const $htmlCards = htmlCardsList.join('');
   return /*html*/ `
-    <section class="board-game" onClick='boardGame.handleClick(event)'>
+    <section class="board-game container-board-game" onClick='boardGame.handleClick(event)'>
         ${$htmlCards}
     </section>`;
 }

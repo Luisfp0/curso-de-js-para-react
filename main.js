@@ -4,12 +4,14 @@ import './src/styles/elements/base.css';
 
 import ScoreBoard from './src/objects/ScoreBoard';
 import BoardGame from './src/objects/BoardGame';
+import winnerScreen from './src/components/winnerScreen';
 
 const $root = document.querySelector('#root');
 
 $root.insertAdjacentHTML(
-    'beforeend',
-    `
+  'beforeend',
+  `
+    ${winnerScreen()}
     ${ScoreBoard()}
     ${BoardGame(6)}
     `

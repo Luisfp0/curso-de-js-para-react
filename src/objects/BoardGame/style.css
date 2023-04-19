@@ -4,4 +4,11 @@
   gap: 20px;
   justify-content: space-evenly;
   perspective: 400px;
+  width: 320px;
+}
+
+.container-board-game {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
 }

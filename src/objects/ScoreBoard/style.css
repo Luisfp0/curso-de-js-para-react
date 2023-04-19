@@ -3,4 +3,11 @@
   justify-content: space-evenly;
   padding: 25px 0 25px 0;
   align-items: center;
+  width: 320px;
+}
+
+.container-score-board {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
 }
